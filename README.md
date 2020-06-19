@@ -17,3 +17,6 @@ but ``` x = [1, 2] ``` will not
  
 - ```sum1 = 1 +  2``` will show an error <br />
 but ```sum1 = 1 + 2``` will not
+
+- ``` front = "something"``` will show an error <br />
+```front = "something"```

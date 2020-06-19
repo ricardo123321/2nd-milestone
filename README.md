@@ -37,9 +37,10 @@ but ```sum1 = 1 + 2``` will not
 
 👤 Ricardo Vera
 
-= Github: @ricardo123321
-- Twitter: @ricardo61592083
-- Linkedin: linkedin.com/in/ricardo-vera-7381a81a2
+- Github: [@ricardo123321](https://github.com/ricardo123321)
+- Twitter: [@ricardo615920830](https://twitter.com/ricardo615920830)
+- Linkedin: [linkedin](https://www.linkedin.com/in/ricardo-vera-7381a81a2/)
+
 
 ## 🤝 Contributing
 

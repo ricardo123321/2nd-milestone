@@ -46,7 +46,7 @@ class Rscan
   end
 
   def space_inside_oper(count, line)
-    matches1 = ['+', '-', '*', '/', '**']
+    matches1 = ['+', '-', '*', '/', '**', '=']
     num = 0
     line.split('').each do |char|
       if matches1.include?(char) && (line[num + 1] + line[num + 2]) == '  '
@@ -63,7 +63,6 @@ class Rscan
 
   def empty?(line)
     return true if line.length.zero?
-
     false
   end
 

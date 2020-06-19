@@ -42,9 +42,9 @@ class Rscan
   end
 
   def line_length(count, line)
-    if line.length > 100
+    return unless line.length > 100
+    
     @linter_err[count + 1] = "no allowed to have more than 100 characters on a line, you have #{line.length}"
-    end
   end
 
   def space_inside_oper(count, line)
@@ -65,6 +65,7 @@ class Rscan
 
   def empty?(line)
     return true if line.length.zero?
+
     false
   end
 

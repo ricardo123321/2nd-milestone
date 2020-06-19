@@ -13,4 +13,5 @@ In this project i've created a Ruby Linter wich can detect and inform about dife
 # Examples
 
 ``` x = [    1, 2] ``` will show an error
+but ``` x = [1, 2] ``` will not
  

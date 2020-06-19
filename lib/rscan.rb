@@ -17,14 +17,14 @@ class Rscan
     count = 0
     @file.each do |line|
       line_length(count, line)
-      withespace_inside_pbb(count, line)
-      withespace_inside_oper(count, line)
+      space_inside_par(count, line)
+      space_inside_oper(count, line)
       check_identation(count, line)
       count = count + 1
     end
   end
 
-  def withespace_inside_pbb(count, line)
+  def space_inside_par(count, line)
     matches1 = ['(', '[', '{']
     matches2 = [')', ']', '}']
     num = 0
@@ -45,7 +45,7 @@ class Rscan
     @linter_err[count + 1] = "no allowed to have more than 100 characters on a line, you have #{line.length}" if line.length > 100
   end
 
-  def withespace_inside_oper(count, line)
+  def space_inside_oper(count, line)
     matches1 = ['+', '-', '*', '/', '**']
     num = 0
     line.split('').each do |char|

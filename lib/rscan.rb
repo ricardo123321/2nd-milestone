@@ -43,7 +43,7 @@ class Rscan
 
   def line_length(count, line)
     return unless line.length > 100
-    
+
     @linter_err[count + 1] = "no allowed to have more than 100 characters on a line, you have #{line.length}"
   end
 
@@ -71,11 +71,13 @@ class Rscan
 
   def check_identation(count, line)
     return if empty?(line)
+
     count_space = 0
     line.split('').each do |char|
       break if char != ' '
+
       count_space += 1
     end
-    @linter_err[count + 1] = 'Wrong indentation level' if count_space % 2 != 0
+    @linter_err[count + 1] = 'Wrong indentation level' if count_space.odd? 
   end
 end

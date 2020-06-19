@@ -24,8 +24,6 @@ class Rscan
     end
   end
 
-  private
-
   def withespace_inside_pbb(count, line)
     matches1 = ['(', '[', '{']
     matches2 = [')', ']', '}']

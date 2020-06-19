@@ -20,3 +20,29 @@ but ```sum1 = 1 + 2``` will not
 
 - ``` front = "something"``` will show an error <br />
 ```front = "something"```
+
+## How to use
+
+1. Download this files
+
+2. run the main file using this line in the terminal: ruby "write the path here"
+
+3 - now write the path of the file you want to check
+
+## Built With
+
+- Ruby, RSpec.
+
+## Authors
+
+👤 Ricardo Vera
+
+= Github: @ricardo123321
+- Twitter: @ricardo61592083
+- Linkedin: linkedin.com/in/ricardo-vera-7381a81a2
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).

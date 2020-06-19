@@ -78,6 +78,6 @@ class Rscan
 
       count_space += 1
     end
-    @linter_err[count + 1] = 'Wrong indentation level' if count_space.odd? 
+    @linter_err[count + 1] = 'Wrong indentation level' if count_space.odd?
   end
 end

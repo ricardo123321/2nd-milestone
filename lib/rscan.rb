@@ -20,7 +20,7 @@ class Rscan
       space_inside_par(count, line)
       space_inside_oper(count, line)
       check_identation(count, line)
-      count = count + 1
+      count += 1
     end
   end
 
@@ -42,7 +42,9 @@ class Rscan
   end
 
   def line_length(count, line)
-    @linter_err[count + 1] = "no allowed to have more than 100 characters on a line, you have #{line.length}" if line.length > 100
+    if line.length > 100
+    @linter_err[count + 1] = "no allowed to have more than 100 characters on a line, you have #{line.length}"
+    end
   end
 
   def space_inside_oper(count, line)

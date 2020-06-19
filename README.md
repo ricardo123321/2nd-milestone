@@ -27,7 +27,7 @@ but ```sum1 = 1 + 2``` will not
 
 2. run the main file using this line in the terminal: ruby "write the path here"
 
-3 - now write the path of the file you want to check
+3. now write the path of the file you want to check
 
 ## Built With
 

@@ -18,7 +18,7 @@ RSpec.describe Rscan do
       expect { file.space_inside_par(0, line1) }.to change(file, :linter_err)
       expect(file.linter_err[1]).to eql('Whitespace inside after parentheses, brackets or braces')
     end
-    it 'shows the changes in the linter error after parentheses' do
+    it 'shows the changes in the linter error before parentheses' do
       expect { file.space_inside_par(0, line3) }.to change(file, :linter_err)
       expect(file.linter_err[1]).to eql('Whitespace inside before parentheses, brackets or braces')
     end
@@ -36,7 +36,7 @@ RSpec.describe Rscan do
       expect { file.space_inside_oper(0, line1) }.to change(file, :linter_err)
       expect(file.linter_err[1]).to eql('Whitespace inside before an operator')
     end
-    it 'shows the changes in the linter error before an operator' do
+    it 'shows the changes in the linter error after an operator' do
       expect { file.space_inside_oper(0, line3) }.to change(file, :linter_err)
       expect(file.linter_err[1]).to eql('Whitespace inside after an operator')
     end

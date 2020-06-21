@@ -21,7 +21,7 @@ class Rscan
     end
   end
 
-  private 
+  private
 
   def space_inside_par(count, line)
     matches1 = ['(', '[', '{']

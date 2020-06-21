@@ -1,10 +1,10 @@
 # 2nd milestone: Ruby Linter
 
-In this project i've created a Ruby Linter wich can detect and inform about diferent errors in a ruby file, those are:
+In this project I've created a Ruby Linter which can detect and inform about different errors in a ruby file, those are:
 
 1. Line has more than 100 characters
 
-2. whitespace before or after parentheses, brackets and braces
+2. whitespace before or after parentheses, brackets, and braces
 
 3. whitespace before or after an assignment operator
 
@@ -23,11 +23,12 @@ but ```sum1 = 1 + 2``` will not
 
 ## How to use
 
-1. Download this files
+1. Download these files
 
-2. run the main file using this line in the terminal: ruby "write the path here"
+2. open your terminal and type 
+```ruby "type here the path to the main ruby file"```
 
-3. now write the path of the file you want to check
+3. after that, went prompted, introduce the path of the file you want to check, for testing purposes, there is a test file in which you can check that all the lint errors work properly
 
 ## Built With
 
@@ -44,6 +45,6 @@ but ```sum1 = 1 + 2``` will not
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).

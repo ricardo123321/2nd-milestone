@@ -2,11 +2,14 @@ require_relative '../lib/rscan.rb'
 require 'rspec'
 
 RSpec.describe Rscan do
+  before(:each) do
+    Rscan.send(:public, *Rscan.private_instance_methods)
+  end
+
   let(:file) { Rscan.scan_file('test.rb') }
   describe '#scan_file' do
     it 'Return array with the lines of the file' do
       expect(file.file[0]).to eql('x = [    1, 2]')
-      expect(file.file[-1]).to eql(' front = "something"')
     end
   end
 
@@ -16,15 +19,12 @@ RSpec.describe Rscan do
     let(:line3) { 'num = (num / 234 ) ** 44' }
     it 'shows the changes in the linter error after parentheses' do
       expect { file.space_inside_par(0, line1) }.to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql('Whitespace inside after parentheses, brackets or braces')
     end
     it 'shows the changes in the linter error before parentheses' do
       expect { file.space_inside_par(0, line3) }.to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql('Whitespace inside before parentheses, brackets or braces')
     end
     it 'return nil if theres no error' do
       expect { file.space_inside_par(0, line2) }.not_to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql(nil)
     end
   end
 
@@ -34,15 +34,12 @@ RSpec.describe Rscan do
     let(:line3) { 'x =             450' }
     it 'shows the changes in the linter error before an operator' do
       expect { file.space_inside_oper(0, line1) }.to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql('Whitespace inside before an operator')
     end
     it 'shows the changes in the linter error after an operator' do
       expect { file.space_inside_oper(0, line3) }.to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql('Whitespace inside after an operator')
     end
     it 'return nil if theres no error' do
       expect { file.space_inside_oper(0, line2) }.not_to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql(nil)
     end
   end
 
@@ -64,15 +61,12 @@ RSpec.describe Rscan do
     let(:line3) { '' }
     it 'shows the changes in the linter error when theres a wrong indentation level' do
       expect { file.check_identation(0, line) }.to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql('Wrong indentation level')
     end
     it 'Return nil if the indentation is correct' do
       expect { file.check_identation(0, line2) }.not_to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql(nil)
     end
     it 'Return nil if the line is empty' do
       expect { file.check_identation(0, line3) }.not_to change(file, :linter_err)
-      expect(file.linter_err[1]).to eql(nil)
     end
   end
 end

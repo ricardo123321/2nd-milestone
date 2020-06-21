@@ -8,9 +8,6 @@ class Rscan
 
   def self.scan_file(path_file)
     Rscan.new(IO.readlines(path_file, chomp: true))
-  rescue Errno::ENOENT
-    puts 'No such file or directory'
-    Rscan.new([''])
   end
 
   def linter_on
@@ -23,6 +20,8 @@ class Rscan
       count += 1
     end
   end
+
+  private 
 
   def space_inside_par(count, line)
     matches1 = ['(', '[', '{']
